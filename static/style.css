@@ -1,0 +1,360 @@
+/* Import a custom Google font named 'Underdog' for the entire application */
+@import url('https://fonts.googleapis.com/css2?family=Underdog&display=swap');
+
+/* Apply the Underdog font (with system-ui fallback) to all elements */
+* {
+    font-family: "Underdog", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Light theme and dark theme backgrounds/colors */
+body.light {
+    background: linear-gradient(to bottom right, #f5f5f5, #ffffff);
+    color: #111;
+}
+
+body.dark {
+    background: linear-gradient(to bottom right, #0e0e0e, #1a1a1a);
+    color: #f5f5f5;
+}
+
+/* Main container that wraps the entire UI */
+.container {
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: rgba(30, 30, 30, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Adjust the container background for light theme */
+body.light .container {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Main title styling, including a gradient text effect and shadow */
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 50px;
+    background: linear-gradient(to right, #a678f4, #6b28c7);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(166, 120, 244, 0.4);
+}
+
+/* Subheading styling for each step or section */
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #a678f4;
+}
+
+/* Labels for inputs, ensuring a block display for layout consistency */
+label {
+    color: inherit;
+    font-weight: 500;
+    display: block;
+    margin-top: 8px;
+}
+
+/* Section spacing for form steps */
+.upload-section,
+.text-section,
+.translation-choice,
+.output-name {
+    margin-bottom: 35px;
+}
+
+/* Customize the 'Choose File' button for file inputs in WebKit browsers */
+input[type="file"]::-webkit-file-upload-button {
+    background: linear-gradient(90deg, #a678f4, #6b28c7);
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Hover effect for the 'Choose File' button */
+input[type="file"]::-webkit-file-upload-button:hover {
+    background: linear-gradient(90deg, #915ee0, #5a23a4);
+}
+
+/* Global styling for file inputs, text fields, text areas, and selects */
+input[type="file"],
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    appearance: none;
+    font-family: inherit;
+}
+
+/* Light theme variations for form fields */
+body.light input[type="file"],
+body.light input[type="text"],
+body.light textarea,
+body.light select {
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #bbb;
+}
+
+/* Disable autofill's default styles */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px transparent inset;
+    -webkit-text-fill-color: inherit;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Make textareas resizable in vertical direction only */
+textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+/* Big primary button for the "Clone" action */
+.clone-btn {
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #a678f4, #6b28c7);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(166, 120, 244, 0.3);
+    transition: all 0.25s ease;
+    animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+/* Hover style for the "Clone" button */
+.clone-btn:hover {
+    background: linear-gradient(90deg, #915ee0, #5a23a4);
+    box-shadow: 0 6px 18px rgba(166, 120, 244, 0.5);
+}
+
+/* Subtle pulsing glow animation for the "Clone" button */
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 10px rgba(166, 120, 244, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(166, 120, 244, 0.7); }
+    100% { box-shadow: 0 0 10px rgba(166, 120, 244, 0.4); }
+}
+
+/* Common section for displaying results (audio, download links) */
+.result-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Animated shimmer effect on the result headings */
+.result-section h2 {
+    color: #a678f4;
+    margin-bottom: 20px;
+    animation: shimmer 5s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.75; }
+}
+
+/* Center the audio player */
+.result-section audio {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* Download button for output files */
+.download-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, #a678f4, #6b28c7);
+    color: white;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(166, 120, 244, 0.3);
+    transition: all 0.2s ease;
+}
+
+/* Hover state for download links/buttons */
+.download-btn:hover {
+    background: linear-gradient(90deg, #915ee0, #5a23a4);
+    box-shadow: 0 6px 14px rgba(166, 120, 244, 0.5);
+}
+
+/* Extra spacing for language selection dropdown */
+#language-selection {
+    margin-top: 10px;
+}
+
+/* Spinner shown during processing/cloning */
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #a678f4;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Theme toggle switch in the top-right corner */
+.theme-toggle {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    color: inherit;
+}
+
+.theme-toggle label {
+    margin: 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Hide the default checkbox appearance, replaced with icons in label::before */
+.theme-toggle input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #a678f4;
+    display: none;
+}
+
+/* Show a moon icon in dark mode */
+body.dark .theme-toggle label::before {
+    content: "🌙";
+}
+
+/* Show a sun icon in light mode */
+body.light .theme-toggle label::before {
+    content: "☀️";
+}
+
+/* The custom dropdown styling for selecting languages */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    font-family: inherit;
+    user-select: none;
+}
+
+/* The area that displays the currently selected language */
+.custom-dropdown .selected {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #444;
+    cursor: pointer;
+}
+
+body.light .custom-dropdown .selected {
+    background-color: #fff;
+    color: #111;
+    border-color: #bbb;
+}
+
+/* Hidden by default, the list of language options appears below the selected item */
+.custom-dropdown .options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 10px;
+    margin-top: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 999;
+    display: none;
+    list-style: none;
+    padding-left: 0;
+}
+
+body.light .custom-dropdown .options {
+    background-color: #fff;
+    border-color: #bbb;
+}
+
+/* Each individual option in the dropdown */
+.custom-dropdown .options li {
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+/* Hover and focus states for dropdown options */
+.custom-dropdown .options li:hover,
+.custom-dropdown .options li:focus {
+    background-color: #6b28c7;
+    color: #fff;
+}
+
+/* When toggled open, the 'show' class is added to display the list */
+.custom-dropdown .options.show {
+    display: block;
+}
+
+/* Custom scrollbar styling for the dropdown list */
+.custom-dropdown .options::-webkit-scrollbar {
+    width: 10px;
+}
+
+.custom-dropdown .options::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.custom-dropdown .options::-webkit-scrollbar-thumb {
+    background: #6b28c7;
+    border-radius: 8px;
+}
+
+/* Light theme scrollbar styling */
+body.light .custom-dropdown .options::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+body.light .custom-dropdown .options::-webkit-scrollbar-thumb {
+    background: #a678f4;
+}
