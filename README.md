@@ -62,7 +62,7 @@ Access the Web App:
 
 In your browser, go to http://127.0.0.1:9999.
 
-![Image](https://kappa.lol/x1y71T.png)
+![Image](https://kappa.lol/DiCmvr.png)
 Step 1: Upload Voice Samples
 
 > Select one or more .mp3 or .wav files.
